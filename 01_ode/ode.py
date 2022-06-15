@@ -79,18 +79,11 @@ def do_couplet(r_flag, c_flag, r_s, n_s, a_s, name):
 
 def couplet_1(r_flag, c_flag, r_s, n_s, a_s, name):
   print('Doing couplet 1')
-  # out = "I LOVE TO WATCH YOUR "
-  # print(out)
-  # n = 1
   n = do_random(10)
   adjective = a_s[n-1]
-  # print(adjective)
-  # print(r_s)
 
   s = word_idx[0][r_flag-1]
   n = do_random(s)
-  # print(s, r_flag)
-  # print(r_s[0, r_flag, ])
   noun = r_s[0][r_flag][n-1]
 
   phrase = f'I LOVE TO WATCH YOUR {adjective} {noun}'
