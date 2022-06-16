@@ -35,8 +35,9 @@ def initialise():
   return r_s, n_s, a_s
 
 def prompt():
-  name = 'Gary'
-  print("Enter a name: " + name)
+  name = input("TYPE NAME: ")
+  print()
+  print()
   return name
 
 def describe():
@@ -50,9 +51,11 @@ OF THE PERSON TO WHOM YOU WISH TO
 OFFER YOUR ODE.
   """
   print(description)
+  print()
 
 def dedication(name):
-  print(f"ODE TO {name}")
+  print(f"--ODE TO {name}--")
+  print()
 
 def select_couplet(r_s, n_s, a_s, name):
   s = 5
@@ -65,7 +68,6 @@ def do_random(s):
   return random.randint(1, s)
 
 def do_couplet(r_flag, c_flag, r_s, n_s, a_s, name):
-  # c_flag = 5  # TODO remove
   funcs = {
     1: couplet_1,
     2: couplet_2,
@@ -74,6 +76,7 @@ def do_couplet(r_flag, c_flag, r_s, n_s, a_s, name):
     5: couplet_5,
   }
   funcs[c_flag](r_flag, c_flag, r_s, n_s, a_s, name)
+  print()
 
 def couplet_1(r_flag, c_flag, r_s, n_s, a_s, name):
   """"""
@@ -188,10 +191,9 @@ def control():
     describe()
     name = prompt()
     dedication(name=name)
-    print('')
     for i in range(4):
       select_couplet(r_s, n_s, a_s, name)
-      print('')
+      
 
 
 
