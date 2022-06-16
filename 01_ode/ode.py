@@ -65,7 +65,7 @@ def do_random(s):
   return random.randint(1, s)
 
 def do_couplet(r_flag, c_flag, r_s, n_s, a_s, name):
-  c_flag = 2  # TODO remove
+  # c_flag = 5  # TODO remove
   funcs = {
     1: couplet_1,
     2: couplet_2,
@@ -76,7 +76,7 @@ def do_couplet(r_flag, c_flag, r_s, n_s, a_s, name):
   funcs[c_flag](r_flag, c_flag, r_s, n_s, a_s, name)
 
 def couplet_1(r_flag, c_flag, r_s, n_s, a_s, name):
-  # print('Doing couplet 1')
+  """"""
   n = do_random(10)
   adjective = a_s[n]
 
@@ -95,8 +95,7 @@ def couplet_1(r_flag, c_flag, r_s, n_s, a_s, name):
   print(phrase)
 
 def couplet_2(r_flag, c_flag, r_s, n_s, a_s, name):
-  print('Doing couplet 2')
-
+  """"""
   n = do_random(10)
   adjective = a_s[n]
 
@@ -124,21 +123,75 @@ def couplet_2(r_flag, c_flag, r_s, n_s, a_s, name):
   print(phrase)
 
 def couplet_3(r_flag, c_flag, r_s, n_s, a_s, name):
-  print('Doing couplet 3')
+  """"""
+  n = do_random(10)
+  adjective = a_s[n]
+
+  n = do_random(10)
+  noun = n_s[n]
+
+  s = word_idx[2][r_flag]
+  n = do_random(s)
+  word = r_s[2][r_flag][n]
+
+  phrase = f'THE {adjective} {noun} COULD NEVER BE SO {word}'
+  print(phrase)
+
+  s = word_idx[3][r_flag]
+  n = do_random(s)
+  action = r_s[3][r_flag][n]
+  phrase = f'AS {name} IN THE MORNING WHEN YOU {action}.'
+  print(phrase)
 
 def couplet_4(r_flag, c_flag, r_s, n_s, a_s, name):
-  print('Doing couplet 4')
+  """"""
+  s = word_idx[1][r_flag]
+  n = do_random(s)
+  noun = r_s[1][r_flag][n]
+
+  phrase = f'OH {name} YOUR VERY LOVELY {noun},'
+  print(phrase)
+
+  n = do_random(5)
+  r_n = n
+  s = word_idx[1][r_n]
+  n = do_random(s)
+  word = r_s[1][r_n][n]
+
+  s = word_idx[2][r_flag]
+  n = do_random(s)
+  word2 = r_s[2][r_flag][n]
+
+  phrase = f"IS RATHER LIKE A {word} THAT'S {word2}."
+  print(phrase)
 
 def couplet_5(r_flag, c_flag, r_s, n_s, a_s, name):
-  print('Doing couplet 5')
+  """"""
+  s = word_idx[2][r_flag]
+  n = do_random(s)
+  word = r_s[2][r_flag][n]
+
+  phrase = f'MY {name}, {name}, {name}, SO STRANGELY {word},'
+  print(phrase)
+
+  n = do_random(10)
+  adjective = a_s[n]
+  s = word_idx[1][r_flag]
+  n = do_random(s)
+  noun = r_s[1][r_flag][n]
+
+  phrase = f"NO WONDER SINCE YOU'VE GOT A VERY {adjective} {noun}."
+  print(phrase)
 
 def control():
     r_s, n_s, a_s = initialise()
     describe()
     name = prompt()
     dedication(name=name)
-    for i in range(1):
+    print('')
+    for i in range(4):
       select_couplet(r_s, n_s, a_s, name)
+      print('')
 
 
 
